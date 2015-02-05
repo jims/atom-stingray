@@ -1,12 +1,11 @@
 {
   "name": "stingray",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Stingray engine support package for atom",
   "repository": "https://github.com/jims/atom-stingray",
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
