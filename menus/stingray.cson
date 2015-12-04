@@ -1,0 +1,7 @@
+'menu': [
+  'label': 'Stingray'
+  'submenu': [
+    'label': 'Refresh',
+    'command': 'stingray:refresh'
+  ]
+]
