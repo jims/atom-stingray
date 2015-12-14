@@ -16,6 +16,7 @@
     }
   },
   "dependencies": {
-    "rxjs-es6": "^5.0.0-alpha.12"
+    "cuint": "^0.2.0",
+    "rx": "^4.0.7"
   }
 }
