@@ -8,6 +8,13 @@
   "engines": {
     "atom": ">0.50.0"
   },
+  "consumedServices": {
+    "status-bar": {
+      "versions": {
+        "^1.0.0": "consumeStatusBar"
+      }
+    }
+  },
   "dependencies": {
     "rxjs-es6": "^5.0.0-alpha.12",
     "cuint": "^0.2.0"
