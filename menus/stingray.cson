@@ -3,5 +3,6 @@
   'submenu': [
     { 'label': 'Refresh', 'command': 'stingray:refresh' }
     { 'label': 'Toggle Console', 'command': 'stingray:toggleConsole' }
+    { 'label': 'Run Project', 'command': 'stingray:runProject'}
   ]
 ]
