@@ -8,5 +8,6 @@
     { 'label': 'Execute Buffer', 'command': 'stingray:execute-buffer'}
     { 'label': 'Execute Selection', 'command': 'stingray:execute-selection'}
     { 'label': 'Open Resource', 'command': 'stingray:open-resource'}
+    { 'label': 'Help...', 'command': 'stingray:help'}
   ]
 ]
