@@ -4,5 +4,6 @@
     { 'label': 'Refresh', 'command': 'stingray:refresh' }
     { 'label': 'Toggle Console', 'command': 'stingray:toggleConsole' }
     { 'label': 'Run Project', 'command': 'stingray:runProject'}
+    { 'label': 'Compile', 'command': 'stingray:compile'}
   ]
 ]
