@@ -7,5 +7,6 @@
     { 'label': 'Compile', 'command': 'stingray:compile'}
     { 'label': 'Execute Buffer', 'command': 'stingray:execute-buffer'}
     { 'label': 'Execute Selection', 'command': 'stingray:execute-selection'}
+    { 'label': 'Open Resource', 'command': 'stingray:open-resource'}
   ]
 ]
