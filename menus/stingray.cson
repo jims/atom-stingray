@@ -6,5 +6,6 @@
     { 'label': 'Run Project', 'command': 'stingray:run-project'}
     { 'label': 'Compile', 'command': 'stingray:compile'}
     { 'label': 'Execute Buffer', 'command': 'stingray:execute-buffer'}
+    { 'label': 'Execute Selection', 'command': 'stingray:execute-selection'}
   ]
 ]
