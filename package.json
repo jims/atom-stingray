@@ -15,6 +15,13 @@
       }
     }
   },
+  "providedServices": {
+    "autocomplete.provider": {
+      "versions": {
+        "2.0.0": "provide"
+      }
+    }
+  },
   "dependencies": {
     "cuint": "^0.2.0",
     "rx": "^4.0.7",
