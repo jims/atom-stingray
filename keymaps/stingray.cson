@@ -1,2 +1,10 @@
 'atom-workspace':
+  'ctrl-f8' : 'stingray:compile'
+  'f8' : 'stingray:run-project'
   'ctrl-f5': 'stingray:refresh'
+  'f1':  'stingray:help-selection'
+  'shift-f1': 'stingray:help'
+  'f6' : 'stingray:execute-buffer'
+  'ctrl-f6': 'stingray:execute-selection'
+  'ctrl-shift-g': 'stingray:open-resource'
+  'ctrl-1': 'stingray:toggle-console'
