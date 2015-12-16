@@ -9,5 +9,6 @@
     { 'label': 'Execute Selection', 'command': 'stingray:execute-selection'}
     { 'label': 'Open Resource', 'command': 'stingray:open-resource'}
     { 'label': 'Lua API Help', 'command': 'stingray:help'}
+    { 'label': 'Lua API Help Selection', 'command': 'stingray:help-selection'}
   ]
 ]
