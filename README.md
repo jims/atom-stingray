@@ -40,6 +40,8 @@ Press `Shift-F1` to bring up a dialog box that allows you to search among all th
 As you type Lua API functions and Stingray resource path, the Stingray
 plugin will offer autocomplete suggestions.
 
+![](docs/autocomplete.gif)
+
 ## Navigate between resources
 
 With the cursor in a Stingray resource path you can quick-jump to the
