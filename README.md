@@ -66,7 +66,7 @@ run the Lua file you are currently editing. This will effective hot-reload
 that file. You can also use `Execute Selection` to run just the
 Lua coe that you have currently selected.
 
-# Lua REPL console integrated into Atom
+## Lua REPL console integrated into Atom
 
 `Toggle Console` shows the Lua REPL that allows you to communicate
 with the running Lua engine. Output from the engine will be printed
