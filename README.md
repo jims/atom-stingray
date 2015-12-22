@@ -75,3 +75,5 @@ Lua code that you have currently selected.
 `Toggle Console` shows the Lua REPL that allows you to communicate
 with the running Lua engine. Output from the engine will be printed
 to the console and you can write Lua code directly into the console.
+
+![](docs/repl.gif)
