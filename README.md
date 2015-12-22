@@ -47,6 +47,8 @@ plugin will offer autocomplete suggestions.
 With the cursor in a Stingray resource path you can quick-jump to the
 resource.
 
+![](docs/go-to-resource.gif)
+
 ## Launch stingray projects and hot-reload content
 
 You can launch Stingray projects directly from atom by choosing
