@@ -66,7 +66,9 @@ project content. `Refresh` tells the engine to reload all changed files.
 If you are just working in Lua, you can use `Execute Buffer` to
 run the Lua file you are currently editing. This will effective hot-reload
 that file. You can also use `Execute Selection` to run just the
-Lua coe that you have currently selected.
+Lua code that you have currently selected.
+
+![](docs/refresh.gif)
 
 ## Lua REPL console integrated into Atom
 
