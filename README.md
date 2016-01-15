@@ -35,25 +35,25 @@ resource shaders, using the shader syntax from [sublime-shaders](https://github.
 Press `F1` to bring up the Adoc help for the Stingray Lua API
 function located under your cursor.
 
-![](docs/help-selection.gif)
+![](https://raw.githubusercontent.com/jims/atom-stingray/master/docs/help-selection.gif)
 
 Press `Shift-F1` to bring up a dialog box that allows you to search among all the help files.
 
-![](docs/help.gif)
+![](https://raw.githubusercontent.com/jims/atom-stingray/master/docs/help.gif)
 
 ### Auto-complete for Lua API and Stingray resource paths
 
 As you type Lua API functions and Stingray resource paths, the Stingray
 plugin will offer autocomplete suggestions.
 
-![](docs/autocomplete.gif)
+![](https://raw.githubusercontent.com/jims/atom-stingray/master/docs/autocomplete.gif)
 
 ### Navigate between resources
 
 With the cursor in a Stingray resource path you can quick-jump to the
 resource.
 
-![](docs/go-to-resource.gif)
+![](https://raw.githubusercontent.com/jims/atom-stingray/master/docs/go-to-resource.gif)
 
 ### Launch stingray projects and hot-reload content
 
@@ -74,7 +74,7 @@ run the Lua file you are currently editing. This will effective hot-reload
 that file. You can also use `Execute Selection` to run just the
 Lua code that you have currently selected.
 
-![](docs/refresh.gif)
+![](https://raw.githubusercontent.com/jims/atom-stingray/master/docs/refresh.gif)
 
 ### Lua REPL console integrated into Atom
 
@@ -82,7 +82,7 @@ Lua code that you have currently selected.
 with the running Lua engine. Output from the engine will be printed
 to the console and you can write Lua code directly into the console.
 
-![](docs/repl.gif)
+![](https://raw.githubusercontent.com/jims/atom-stingray/master/docs/repl.gif)
 
 ## Settings
 
@@ -90,7 +90,8 @@ For the plugin to find your Stingray settings and executables it must be able
 to locate your Stingray installation. There are three ways of doing this:
 
 * If the editor is already running, the plugin will connect to the running
-editor and talk to it to find out the installation directory.
+editor and talk to it to find out the installation directory. (This only works
+in Stingray 1.3.)
 
 * Otherwise, the plugin will look for an Atom setting called `stingray.toolchainPath`
 that should point to your Stingray toolchain directory. That is the top level
