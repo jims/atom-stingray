@@ -3,14 +3,18 @@
 This package provides a number of features that integrates Atom
 with the Stingray game engine.
 
-The following features are provided:
+The features that depend on communication with the Stingray engine require
+the Stingray WebSocket interface, which is currently only available in the
+development branch of Stingray (which will eventually be released as Stingray
+1.3). That means they won't work with the current binary releases of Stingray.
+Feature compatibility is shown in the list below:
 
-* SJSON syntax highlighting.
-* Stingray Lua API help.
-* Auto-complete for Lua API and resource paths.
-* Navigate between resources
-* Launch stingray project and hot reload content
-* Lua REPL console integrated into Atom
+* SJSON syntax highlighting (Stingray 1.1)
+* Stingray Lua API help (Stingray 1.1)
+* Auto-complete for Lua API and resource paths (Stingray 1.1)
+* Navigate between resources (Stingray 1.1)
+* Launch Stingray project and hot reload content (Stingray 1.3)
+* Lua REPL console integrated into Atom (Stingray 1.3)
 
 Most of these features are available through the *Stingray* menu
 added by the package.
