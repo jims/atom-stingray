@@ -1,18 +1,21 @@
 'menu': [
-  'label': 'Stingray'
-  'submenu': [
-    { 'label': 'Toggle Console', 'command': 'stingray:toggle-console' }
-    { 'type': 'separator' }
-    { 'label': 'Compile', 'command': 'stingray:compile'}
-    { 'label': 'Run Project', 'command': 'stingray:run-project'}
-    { 'label': 'Refresh', 'command': 'stingray:refresh' }
-    { 'type': 'separator' }
-    { 'label': 'Execute Buffer', 'command': 'stingray:execute-buffer'}
-    { 'label': 'Execute Selection', 'command': 'stingray:execute-selection'}
-    { 'type': 'separator' }
-    { 'label': 'Open Resource', 'command': 'stingray:open-resource'}
-    { 'type': 'separator' }
-    { 'label': 'Browse Lua API', 'command': 'stingray:help'}
-    { 'label': 'Lua API Lookup Selection', 'command': 'stingray:help-selection'}
-  ]
+    'label': 'Packages'
+    'submenu': [
+        'label': 'Stingray'
+        'submenu': [
+            { 'label': 'Toggle Console', 'command': 'stingray:toggle-console' }
+            { 'type': 'separator' }
+            { 'label': 'Compile', 'command': 'stingray:compile'}
+            { 'label': 'Run Project', 'command': 'stingray:run-project'}
+            { 'label': 'Refresh', 'command': 'stingray:refresh' }
+            { 'type': 'separator' }
+            { 'label': 'Execute Buffer', 'command': 'stingray:execute-buffer'}
+            { 'label': 'Execute Selection', 'command': 'stingray:execute-selection'}
+            { 'type': 'separator' }
+            { 'label': 'Open Resource', 'command': 'stingray:open-resource'}
+            { 'type': 'separator' }
+            { 'label': 'Browse Lua API', 'command': 'stingray:help'}
+            { 'label': 'Lua API Lookup Selection', 'command': 'stingray:help-selection'}
+        ]
+    ]
 ]
