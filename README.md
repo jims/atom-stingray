@@ -87,11 +87,18 @@ to the console and you can write Lua code directly into the console.
 ## Settings
 
 For the plugin to find your Stingray settings and executables it must be able
-to locate your Stingray installation. The plugin will look for an environment
-variable called `SR_BIN_DIR` which should be set to your toolchain path.
+to locate your Stingray installation. There are three ways of doing this:
 
-The *toolchain* folder is the top level Stingray directory which has subfolders
-called `core`, `editor`, `engine`, etc.
+* If the editor is already running, the plugin will connect to the running
+editor and talk to it to find out the installation directory.
 
-If you don't want to use the environment variable, you can also set it up as
-`stingray.toolchainPath` in the atom settings.
+* Otherwise, the plugin will look for an Atom setting called `stingray.toolchainPath`
+that should point to your Stingray toolchain directory. That is the top level
+Stingray directory which has subdirectories called `core`, `editor`, `engine`,
+etc.
+
+* If that setting has not been set, the plugin will read the installation directory
+from the environment variable `SR_BIN_DIR`.
+
+If neither of these options work, the plugin will not be able to find your
+Stingray installation and will run in offline mode.
