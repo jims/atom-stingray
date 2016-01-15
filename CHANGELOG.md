@@ -5,3 +5,11 @@
 ## 1.0.1
 
 * Added Cg/HLSL/GLSL shader grammars converted from https://github.com/noct/sublime-shaders.
+
+## 1.2
+
+* Stingray Lua API Help
+* Auto-complete
+* Navigate between resources
+* Launch project
+* Lua REPL console
