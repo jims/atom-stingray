@@ -90,7 +90,8 @@ For the plugin to find your Stingray settings and executables it must be able
 to locate your Stingray installation. There are three ways of doing this:
 
 * If the editor is already running, the plugin will connect to the running
-editor and talk to it to find out the installation directory.
+editor and talk to it to find out the installation directory. (This only works
+in Stingray 1.3.)
 
 * Otherwise, the plugin will look for an Atom setting called `stingray.toolchainPath`
 that should point to your Stingray toolchain directory. That is the top level
