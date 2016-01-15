@@ -19,7 +19,9 @@ Feature compatibility is shown in the list below:
 Most of these features are available through the *Stingray* menu
 added by the package.
 
-## SJSON Syntax Highlighting
+## Features
+
+### SJSON Syntax Highlighting
 
 Stingray uses a "more human readable" format of JSON called SJSON.
 The Stingray package provides SJSON syntax highlighting for
@@ -28,7 +30,7 @@ Stingray resource files, such as `.level`, `.unit`, etc.
 The syntax package also provides HLSL syntax high lighting for
 resource shaders, using the shader syntax from [sublime-shaders](https://github.com/noct/sublime-shaders).
 
-## Stingray Lua API Help
+### Stingray Lua API Help
 
 Press `F1` to bring up the Adoc help for the Stingray Lua API
 function located under your cursor.
@@ -39,21 +41,21 @@ Press `Shift-F1` to bring up a dialog box that allows you to search among all th
 
 ![](docs/help.gif)
 
-## Auto-complete for Lua API and Stingray resource paths
+### Auto-complete for Lua API and Stingray resource paths
 
-As you type Lua API functions and Stingray resource path, the Stingray
+As you type Lua API functions and Stingray resource paths, the Stingray
 plugin will offer autocomplete suggestions.
 
 ![](docs/autocomplete.gif)
 
-## Navigate between resources
+### Navigate between resources
 
 With the cursor in a Stingray resource path you can quick-jump to the
 resource.
 
 ![](docs/go-to-resource.gif)
 
-## Launch stingray projects and hot-reload content
+### Launch stingray projects and hot-reload content
 
 You can launch Stingray projects directly from atom by choosing
 `Run Project`. Atom will locate your current project by reading
@@ -74,10 +76,22 @@ Lua code that you have currently selected.
 
 ![](docs/refresh.gif)
 
-## Lua REPL console integrated into Atom
+### Lua REPL console integrated into Atom
 
 `Toggle Console` shows the Lua REPL that allows you to communicate
 with the running Lua engine. Output from the engine will be printed
 to the console and you can write Lua code directly into the console.
 
 ![](docs/repl.gif)
+
+## Settings
+
+For the plugin to find your Stingray settings and executables it must be able
+to locate your Stingray installation. The plugin will look for an environment
+variable called `SR_BIN_DIR` which should be set to your toolchain path.
+
+The *toolchain* folder is the top level Stingray directory which has subfolders
+called `core`, `editor`, `engine`, etc.
+
+If you don't want to use the environment variable, you can also set it up as
+`stingray.toolchainPath` in the atom settings.
