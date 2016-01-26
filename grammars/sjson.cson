@@ -1,34 +1,4 @@
-fileTypes: [
-  "sjson"
-  "material"
-  "shader"
-  "shader_node"
-  "shader_source"
-  "render_config"
-  "particles"
-  "bsi"
-  "texture"
-  "unit"
-  "physics"
-  "landscape"
-  "level"
-  "timpani_bank"
-  "timpani_master"
-  "mouse_cursor"
-  "surface_properties"
-  "physics_properties"
-  "decals"
-  "script_flow_nodes"
-  "flow"
-  "network_config"
-  "strings"
-  "volume_type"
-  "package"
-  "sound_environment"
-  "texture_category"
-  "shading_environment_template"
-  "shading_environment"
-]
+fileTypes: ["sjson"]
 foldingStartMarker: '''
   (?x:       # turn on extended mode
                             ^        # a line beginning with
@@ -175,7 +145,7 @@ repository:
         name: "identifier.sjson"
       }
       {
-        match: "\\w+"
+        match: "[^\\s:=]+"
         name: "identifier.sjson"
       }
     ]
