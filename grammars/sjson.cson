@@ -1,235 +1,235 @@
 fileTypes: ["sjson"]
 foldingStartMarker: '''
-  (?x:       # turn on extended mode
-                            ^        # a line beginning with
-                            \s*      # some optional space
-                            [{\[]    # the start of an object or array
-                            (?!      # but not followed by
-                              .*     # whatever
-                              [}\]]  # and the close of an object or array
-                              ,?     # an optional comma
-                              \s*    # some optional space
-                              $      # at the end of the line
-                            )
-                            |        # ...or...
-                            [{\[]    # the start of an object or array
-                            \s*      # some optional space
-                            $        # at the end of the line
-                          )
-'''
+                      (?x:       # turn on extended mode
+                                                ^        # a line beginning with
+                                                \s*      # some optional space
+                                                [{\[]    # the start of an object or array
+                                                (?!      # but not followed by
+                                                  .*     # whatever
+                                                  [}\]]  # and the close of an object or array
+                                                  ,?     # an optional comma
+                                                  \s*    # some optional space
+                                                  $      # at the end of the line
+                                                )
+                                                |        # ...or...
+                                                [{\[]    # the start of an object or array
+                                                \s*      # some optional space
+                                                $        # at the end of the line
+                                              )
+                    '''
 foldingStopMarker: '''
-  (?x:     # turn on extended mode
-                           ^      # a line beginning with
-                           \s*    # some optional space
-                           [}\]]  # and the close of an object or array
-                         )
-'''
+                     (?x:     # turn on extended mode
+                                              ^      # a line beginning with
+                                              \s*    # some optional space
+                                              [}\]]  # and the close of an object or array
+                                            )
+                   '''
 name: "SJSON"
 patterns: [
-  {
-    include: "#value"
-  }
-  {
-    include: "#dictionary"
-  }
+    {
+        include: "#value"
+    }
+    {
+        include: "#dictionary"
+    }
 ]
 repository:
-  array:
-    begin: "\\["
-    beginCaptures:
-      "0":
-        name: "punctuation.definition.array.begin.sjson"
-    end: "\\]"
-    endCaptures:
-      "0":
-        name: "punctuation.definition.array.end.sjson"
-    name: "meta.structure.array.sjson"
-    patterns: [
-      {
-        include: "#value"
-      }
-      {
-        match: "[, ]"
-        name: "punctuation.separator.array.sjson"
-      }
-      {
-        match: "[^\\s\\]]"
-        name: "invalid.illegal.expected-array-separator.sjson"
-      }
-    ]
-  comments:
-    patterns: [
-      {
-        begin: "/\\*\\*"
-        captures:
-          "0":
-            name: "punctuation.definition.comment.sjson"
-        end: "\\*/"
-        name: "comment.block.documentation.sjson"
-      }
-      {
-        begin: "/\\*"
-        captures:
-          "0":
-            name: "punctuation.definition.comment.sjson"
-        end: "\\*/"
-        name: "comment.block.sjson"
-      }
-      {
-        captures:
-          "1":
-            name: "punctuation.definition.comment.sjson"
-        match: "(//).*$\\n?"
-        name: "comment.line.double-slash.js"
-      }
-    ]
-  constant:
-    match: "\\b(?:true|false|null|nil)\\b"
-    name: "constant.language.sjson"
-  dictionary:
-    name: "meta.structure.dictionary.sjson"
-    patterns: [
-      {
-        include: "#identifier"
-      }
-      {
-        include: "#comments"
-      }
-      {
-        begin: "([:=])\\s*"
+    array:
+        begin: "\\["
         beginCaptures:
-          "1":
-            name: "punctuation.separator.dictionary.key-value.sjson"
-        end: "([,\\s])|(?=\\})"
+            "0":
+                name: "punctuation.definition.array.begin.sjson"
+        end: "\\]"
         endCaptures:
-          "1":
-            name: "punctuation.separator.dictionary.pair.sjson"
-        name: "meta.structure.dictionary.value.sjson"
+            "0":
+                name: "punctuation.definition.array.end.sjson"
+        name: "meta.structure.array.sjson"
         patterns: [
-          {
-            comment: "the.sjson object value"
-            include: "#value"
-          }
-          {
-            match: "[^\\s,]"
-            name: "invalid.illegal.expected-dictionary-separator.sjson"
-          }
+            {
+                include: "#value"
+            }
+            {
+                match: "[, ]"
+                name: "punctuation.separator.array.sjson"
+            }
+            {
+                match: "[^\\s\\]]"
+                name: "invalid.illegal.expected-array-separator.sjson"
+            }
         ]
-      }
-      {
-        match: "[^\\s\\}]"
-        name: "invalid.illegal.expected-dictionary-separator.sjson"
-      }
-    ]
-  double_quoted_string:
-    begin: "\""
-    beginCaptures:
-      "0":
-        name: "punctuation.definition.string.begin.sjson"
-    end: "\""
-    endCaptures:
-      "0":
-        name: "punctuation.definition.string.end.sjson"
-    name: "string.quoted.double.sjson"
-    patterns: [
-      {
-        match: '\\\\.'
-        name: "constant.character.escape.sjson"
-      }
-    ]
-  identifier:
-    name: "keyword.source.identifier.sjson"
-    patterns: [
-      {
-        include: "#string"
-        name: "identifier.sjson"
-      }
-      {
-        match: "[^\\s:=]+"
-        name: "identifier.sjson"
-      }
-    ]
-  number:
-    comment: "handles integer and decimal numbers"
-    match: "-?\\d+(\\.\\d+)?([eE]-?\\d+)?|\\.\\d+([eE]-?\\d+)?"
-    name: "constant.numeric.sjson"
-  object:
-    begin: "\\{"
-    beginCaptures:
-      "0":
-        name: "punctuation.definition.dictionary.begin.sjson"
-    comment: "an SJSON object"
-    end: "\\}"
-    endCaptures:
-      "0":
-        name: "punctuation.definition.dictionary.end.sjson"
-    name: "meta.structure.dictionary.sjson"
-    patterns: [
-      {
-        include: "#dictionary"
-      }
-    ]
-  string:
-    patterns: [
-      {
-        include: "#triple_quoted_string"
-      }
-      {
-        include: "#double_quoted_string"
-      }
-    ]
-  triple_quoted_string:
-    begin: "\"\"\""
-    beginCaptures:
-      "0":
-        name: "punctuation.definition.string.begin.sjson"
-    end: "\"\"\""
-    endCaptures:
-      "0":
-        name: "punctuation.definition.string.end.sjson"
-    name: "text.plain.sjson"
-    patterns: [
-      {
-        match: '''
-          (?x:                # turn on extended mode
-                               \\                # a literal backslash
-                               (?:               # ...followed by...
-                                 [\\/bfnrt]     # one of these characters
-                                 |               # ...or...
-                                 u               # a u
-                                 [0-9a-fA-F]{4}  # and four hex digits
-                               )
-                             )
-        '''
-        name: "constant.character.escape.sjson"
-      }
-      {
-        match: "\\\\."
-        name: "invalid.illegal.unrecognized-string-escape.sjson"
-      }
-      {
-        include: "source.hlsl"
-      }
-    ]
-  value:
-    patterns: [
-      {
-        include: "#constant"
-      }
-      {
-        include: "#number"
-      }
-      {
-        include: "#string"
-      }
-      {
-        include: "#array"
-      }
-      {
-        include: "#object"
-      }
-      {
-        include: "#comments"
-      }
-    ]
+    comments:
+        patterns: [
+            {
+                begin: "/\\*\\*"
+                captures:
+                    "0":
+                        name: "punctuation.definition.comment.sjson"
+                end: "\\*/"
+                name: "comment.block.documentation.sjson"
+            }
+            {
+                begin: "/\\*"
+                captures:
+                    "0":
+                        name: "punctuation.definition.comment.sjson"
+                end: "\\*/"
+                name: "comment.block.sjson"
+            }
+            {
+                captures:
+                    "1":
+                        name: "punctuation.definition.comment.sjson"
+                match: "(//).*$\\n?"
+                name: "comment.line.double-slash.js"
+            }
+        ]
+    constant:
+        match: "\\b(?:true|false|null|nil)\\b"
+        name: "constant.language.sjson"
+    dictionary:
+        name: "meta.structure.dictionary.sjson"
+        patterns: [
+            {
+                include: "#comments"
+            }
+            {
+                include: "#identifier"
+            }
+            {
+                begin: "([:=])\\s*"
+                beginCaptures:
+                    "1":
+                        name: "punctuation.separator.dictionary.key-value.sjson"
+                end: "([,\\s])|(?=\\})"
+                endCaptures:
+                    "1":
+                        name: "punctuation.separator.dictionary.pair.sjson"
+                name: "meta.structure.dictionary.value.sjson"
+                patterns: [
+                    {
+                        comment: "the.sjson object value"
+                        include: "#value"
+                    }
+                    {
+                        match: "[^\\s,]"
+                        name: "invalid.illegal.expected-dictionary-separator.sjson"
+                    }
+                ]
+            }
+            {
+                match: "[^\\s\\}]"
+                name: "invalid.illegal.expected-dictionary-separator.sjson"
+            }
+        ]
+    double_quoted_string:
+        begin: "\""
+        beginCaptures:
+            "0":
+                name: "punctuation.definition.string.begin.sjson"
+        end: "\""
+        endCaptures:
+            "0":
+                name: "punctuation.definition.string.end.sjson"
+        name: "string.quoted.double.sjson"
+        patterns: [
+            {
+                match: '\\\\.'
+                name: "constant.character.escape.sjson"
+            }
+        ]
+    identifier:
+        name: "keyword.source.identifier.sjson"
+        patterns: [
+            {
+                include: "#string"
+                name: "identifier.sjson"
+            }
+            {
+                match: "[^\\s:=]+"
+                name: "identifier.sjson"
+            }
+        ]
+    number:
+        comment: "handles integer and decimal numbers"
+        match: "-?\\d+(\\.\\d+)?([eE]-?\\d+)?|\\.\\d+([eE]-?\\d+)?"
+        name: "constant.numeric.sjson"
+    object:
+        begin: "\\{"
+        beginCaptures:
+            "0":
+                name: "punctuation.definition.dictionary.begin.sjson"
+        comment: "an SJSON object"
+        end: "\\}"
+        endCaptures:
+            "0":
+                name: "punctuation.definition.dictionary.end.sjson"
+        name: "meta.structure.dictionary.sjson"
+        patterns: [
+            {
+                include: "#dictionary"
+            }
+        ]
+    string:
+        patterns: [
+            {
+                include: "#triple_quoted_string"
+            }
+            {
+                include: "#double_quoted_string"
+            }
+        ]
+    triple_quoted_string:
+        begin: "\"\"\""
+        beginCaptures:
+            "0":
+                name: "punctuation.definition.string.begin.sjson"
+        end: "\"\"\""
+        endCaptures:
+            "0":
+                name: "punctuation.definition.string.end.sjson"
+        name: "text.plain.sjson"
+        patterns: [
+            {
+                match: '''
+                         (?x:                # turn on extended mode
+                                              \\                # a literal backslash
+                                              (?:               # ...followed by...
+                                                [\\/bfnrt]     # one of these characters
+                                                |               # ...or...
+                                                u               # a u
+                                                [0-9a-fA-F]{4}  # and four hex digits
+                                              )
+                                            )
+                       '''
+                name: "constant.character.escape.sjson"
+            }
+            {
+                match: "\\\\."
+                name: "invalid.illegal.unrecognized-string-escape.sjson"
+            }
+            {
+                include: "source.hlsl"
+            }
+        ]
+    value:
+        patterns: [
+            {
+                include: "#comments"
+            }
+            {
+                include: "#constant"
+            }
+            {
+                include: "#number"
+            }
+            {
+                include: "#string"
+            }
+            {
+                include: "#array"
+            }
+            {
+                include: "#object"
+            }
+        ]
 scopeName: "source.sjson"
