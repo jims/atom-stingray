@@ -9,6 +9,8 @@
             { 'label': 'Run Project', 'command': 'stingray:run-project'}
             { 'label': 'Refresh', 'command': 'stingray:refresh' }
             { 'type': 'separator' }
+            { 'label': 'Start Profiler', 'command': 'stingray:profile-active-tab' }
+            { 'type': 'separator' }
             { 'label': 'Execute Buffer', 'command': 'stingray:execute-buffer'}
             { 'label': 'Execute Selection', 'command': 'stingray:execute-selection'}
             { 'type': 'separator' }
